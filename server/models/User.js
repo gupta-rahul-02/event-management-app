@@ -15,15 +15,20 @@ const User = sequelize.define('User',{
       email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        // unique: true,
       },
       password: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      verified:{
+        type: DataTypes.BOOLEAN,
+        // defaultValue:0,
+        allowNull:false
+      }
 },{
     tableName:'users',
-    timestamps:false
+    timestamps:true
 })
 
 // User.prototype.generateJwt = async function(){
