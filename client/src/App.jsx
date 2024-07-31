@@ -1,11 +1,18 @@
 import './App.css'
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import Home from './pages/Home'
+import ResetPassword from './components/ResetPassword'
 
 
 function App() {
   return (
     <>
-    <Home/>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/reset-password/:token' element={<ResetPassword/>}/>
+      </Routes>
+    </Router>
     </>
   )
 }
